@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>會員註冊</title>
+  </head>
+  <body>
+    <form action="/register" method="POST">
+      <label for="username">使用者名稱:</label>
+      <input type="text" id="username" name="username" required /><br />
+
+      <label for="email">電子郵件:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="password">密碼:</label>
+      <input type="password" id="password" name="password" required /><br />
+
+      <label for="confirm-password">確認密碼:</label>
+      <input
+        type="password"
+        id="confirm-password"
+        name="confirm-password"
+        required
+      /><br />
+
+      <input type="checkbox" id="age-check" name="age-check" required />
+      <label for="age-check">我已滿18歲</label><br />
+
+      <input type="submit" value="註冊" />
+    </form>
+  </body>
+</html>
