@@ -1,0 +1,145 @@
+* {
+  //多了display
+  //display: flex;
+  //少了 padding margin
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //box-sizing: border-box; 讓盒模型的尺寸計算更加直觀，方便設計者更精確地控制元素的大小。
+  /*background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(30, 24, 35, 1) 0%,
+    rgba(237, 213, 108, 1) 0%,
+    rgba(237, 216, 110, 1) 27%,
+    rgba(166, 215, 153, 1) 49%,
+    rgba(140, 215, 169, 1) 57%,
+    rgba(107, 214, 189, 1) 67%,
+    rgba(0, 212, 255, 1) 100%
+  );*/
+}
+i {
+  //不要summit 出去 => wrong 而是pinter 本身 => 猜測不要擴散出去
+  //點不到這個i
+  //check point的那個 通常我們是想按button
+  pointer-events: none;
+}
+body {
+  background: linear-gradient(90deg, rgb(84, 130, 255), rgb(100, 255, 134));
+}
+/*header h1 {
+  //display: flex; /* 調換 display 與 flex 的位置 
+  font-size: 3rem;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}*/
+header {
+  height: 20vh; //記住單位
+  display: flex;
+  align-items: center; //垂直中間
+  justify-content: center; //水平向中間
+  h1 {
+    font-size: 4rem; //rem相對大小
+  }
+}
+
+form {
+  //3個排列方式
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input, //常忘記有逗號
+  button {
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.75rem;
+    margin: 0.5rem;
+  }
+  //=================================== input arrow remove==========================
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  //===================================================================================
+  input[type="number"] {
+    text-align: center;
+  }
+  button {
+    //游標
+    cursor: pointer;
+    background-color: rgb(0, 146, 114);
+    color: white;
+  }
+}
+/*type : 表示事件的名稱
+  target : 表示觸發事件的元素
+  bubbles : 表示這事件是否是在「冒泡」階段觸發 (true / false)
+  pageX / pageY : 表示事件觸發時，滑鼠座標在網頁的相對位置*/
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //todo class
+  div.Todo {
+    width: 30vw; //當我們設置一個大的element 用vw
+    display: flex; // learn 數學 5hr 45min 同一排
+    align-items: center;
+    margin: 0.2rem 0rem;
+    transition: all 0.1s ease;
+    p {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+    }
+    p.Todo_text {
+      width: 50%;
+    }
+    p.Todo_time {
+      width: 20%;
+      text-align: center;
+    }
+    button {
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+    button.check {
+      background-color: rgb(50, 255, 50);
+    }
+    button.trash {
+      background-color: red;
+    }
+  }
+  .done {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
+  }
+}
+
+@keyframes showup {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes showdown {
+  to {
+    transform: scale(0);
+  }
+}
